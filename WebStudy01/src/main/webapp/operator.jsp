@@ -19,11 +19,11 @@
 		</tr>
 		<tr>
 			<td>operator</td>
-			<td><select name = operate>
-			<option value =+> + </option>
-			<option value =-> - </option>
-			<option value =*> * </option>
-			<option value =/> / </option>
+			<td><select name = operate size=4 style='width:180px'>
+			<option value ="+"> + </option>
+			<option value ="-"> - </option>
+			<option value ="*"> * </option>
+			<option value ="/"> / </option>
 			</select></td>
 		</tr>
 		<tr>

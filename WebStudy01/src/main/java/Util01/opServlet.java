@@ -28,9 +28,9 @@ public class opServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest req, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		doPost(req,response);
 	}
 
 	/**
@@ -38,6 +38,7 @@ public class opServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset =utf-8"); 
 		String val1 = req.getParameter("val1");
 		String val2 = req.getParameter("val2");
 		String oper = req.getParameter("operate");

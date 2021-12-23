@@ -35,7 +35,8 @@ public class personServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset =utf-8");
+		req.setCharacterEncoding("UTF-8"); // 입력데이터의 한글 유지
+		response.setContentType("text/html; charset =utf-8"); //  web browser에 출력데이터 한글표시
 		String name=req.getParameter("name");
 		String birthday=req.getParameter("birthday");
 		String mobile=req.getParameter("mobile");
