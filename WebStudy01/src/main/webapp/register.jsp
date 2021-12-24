@@ -6,33 +6,37 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+table{border-collapse:collapse;
+	  border:1px solid blue;}
+
+</style>
 <body align=center>
-<form method=POST action=memberServlet>
+<form method=POST action="validate.jsp">
     <table align=center>
         <tr>
-            <td align=left>실명</td>
-            <td><input type=text id=realname name=realname></td>
-            <td align=left>성별</td>
-            <td><input type=radio id=male name=gender value=male>남성
+            <td align=right>실명</td>
+            <td align=left><input type=text id=realname name=realname></td></tr>
+        <tr><td align=right>성별</td>
+            <td align=left><input type=radio id=male name=gender value=male>남성
                 <input type=radio id=female name=gender value=female>여성</td>
-        </tr>
+       </tr>
+        
         <tr>
-            <td align=left>아이디</td>
-            <td><input type=text id=idname name=idname></td>
+            <td align=right>로그인아이디</td>
+            <td align=left><input type=text id=idname name=idname></td>
         </tr>
          <tr>
-            <td align=left>비밀번호</td>
-            <td><input type=password id=passcode name=passcode size=20></td>
-            <td align=left>비밀번호 확인</td>
-            <td><input type=password id=passcode1 name=passcode1 size=20></td>
-        </tr>
-        <tr>
-            <td align=left>모바일번호</td>
-            <td><input type=text id=mobile name=mobile></td>
-        </tr>
+            <td align=right>비밀번호</td>
+            <td align=left><input type=password id=passcode name=passcode id=passcode size=20></td>
+         </tr>
+         <tr><td align=right>비밀번호 확인</td>
+            <td align=left><input type=password id=passcode1 name=passcode1 id=passcode1 size=20></td></tr>
+        
+      
 		<tr>
-            <td align=left>관심분야</td>
-            <td align=left >
+            <td align=right>관심분야</td>
+            <td valign=top >
             	<input type=checkbox value=정치 id=politics name=interest>정치&nbsp;
                 <input type=checkbox value=경제 id=economics name=interest>경제&nbsp;
                 <input type=checkbox value=사회 id=society name=interest>사회&nbsp;
@@ -45,12 +49,45 @@
         </tr>
         <tr>
             <td colspan=2>
-                <input type=submit value='작성완료'> &nbsp;&nbsp;
-                <input type=reset value='Reset'>
+                <input type=submit value='가입완료'> &nbsp;&nbsp;
+                <input type=reset value='취소' id=cancel1>
                 
             </td>
         </tr>
     </table>
 </form>
 </body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(document)
+.on('submit',function(){
+//	if($('#passcode').val()==''){
+/*
+ * 유효성검사(validation) 결과가 허용범위면 return true -> submit 진행(서버로 전달)
+ 허용 안되는 값이 있으면 return false -> submit 중단(서버로 전달 차단)
+ */
+	if($('input[name=passcode1]').val()==''){
+		alert('false');
+		return false;	// submit이 취소된다.
+	}
+	else{
+		alert('true');
+		return true;	//submit 진행된다.
+	}
+})
+$(document)
+</script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
