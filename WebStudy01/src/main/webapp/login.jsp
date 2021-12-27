@@ -9,7 +9,7 @@
 <body>
 <form method=post action="login_check.jsp">
 <table align=center>
-<tr><td>아이디</td><td><input type=text name=idname></td></tr>
+<tr><td>아이디</td><td><input type=text name=idname id=idname></td></tr>
 <tr><td>비밀번호</td><td><input type=password name=passcode></td></tr>
 <tr><td colspan=2 align=center><input type=submit value='로그인'>&nbsp;
 				<input type=reset value='비우기'>
@@ -26,5 +26,14 @@ $(document)
 .on('click','#cancel',function(){
 	document.location='home.jsp';
 })
+$(document)
+.on('submit',function(){
+	if($('#idname').val()==''){
+	alert('아이디를 확인 해주세요.');
+	return false;
+	} else{
+		alert('로그인에 성공했습니다.')
+	}
+}
 </script>
 </html>
