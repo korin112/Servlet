@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>login</title>
 </head>
 <body>
-<form method=post action="validate.jsp">
+<form method=post action="login_check.jsp">
 <table align=center>
 <tr><td>아이디</td><td><input type=text name=idname></td></tr>
 <tr><td>비밀번호</td><td><input type=password name=passcode></td></tr>

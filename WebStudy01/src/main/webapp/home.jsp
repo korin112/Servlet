@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home</title>
 </head>
 <body>
-<table align=right>
-<tr align=right><td></td><td><a href="login.jsp">로그인</a></td></tr>
-</table>
+
+<%
+if(request.getAttribute("idname")==null){
+	out.print("<a href='login.jsp'>로그인</a>"+"&nbsp;&nbsp;"+"<a href='register.jsp'>회원가입</a>");
+} else{
+	out.print(request.getAttribute("idname")+"<a href='logout.jsp'>로그아웃</a>");
+}
+
+%>
 </body>
 </html>
