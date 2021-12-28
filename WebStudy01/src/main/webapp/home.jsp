@@ -8,13 +8,19 @@
 </head>
 <body>
 
-<%
-if(request.getAttribute("idname")==null){
-	out.print("<a href='login.jsp'>로그인</a>"+"&nbsp;&nbsp;"+"<a href='register.jsp'>회원가입</a>");
-} else{
-	out.print(request.getAttribute("idname")+"<a href='logout.jsp'>로그아웃</a>");
-}
-
-%>
+	<%
+	if (session.getAttribute("idname") == null) {
+		out.print("<a href='login.jsp'>로그인</a>" + "&nbsp;&nbsp;" + "<a href='register.jsp'>회원가입</a>");
+	} else {
+		out.print(session.getAttribute("idname") + "<a href='logout.jsp'>로그아웃</a>");
+	}
+	%>
 </body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(document)
+.on('click','a',function(){
+	
+})
+</script>
 </html>

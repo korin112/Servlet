@@ -43,11 +43,11 @@ table {
 
 			<tr>
 				<td align=right>관심분야</td>
-				<td valign=top>
-				<input type=checkbox value=정치 id=politics name=interest>정치&nbsp;
-				 <input type=checkbox value=경제	id=economics name=interest>경제&nbsp;
-				  <input type=checkbox value=사회 id=society name=interest>사회&nbsp;
-				   <input type=checkbox value=문화 id=culture name=interest>문화&nbsp;<br>
+				<td valign=top><input type=checkbox value=정치 id=politics
+					name=interest>정치&nbsp; <input type=checkbox value=경제
+					id=economics name=interest>경제&nbsp; <input type=checkbox
+					value=사회 id=society name=interest>사회&nbsp; <input
+					type=checkbox value=문화 id=culture name=interest>문화&nbsp;<br>
 					<input type=checkbox value=역사 id=history name=interest>역사&nbsp;
 					<input type=checkbox value=연예 id=entertainment name=interest>연예&nbsp;
 					<input type=checkbox value=스포츠 id=sport name=interest>스포츠&nbsp;
@@ -63,48 +63,45 @@ table {
 </body>
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
-	$(document)
-	.on('submit', function() {
+	$(document).on('submit', function() {
 		//	if($('#passcode').val()==''){
 		/*
 		 유효성검사(validation) 결과가 허용범위면 return true -> submit 진행(서버로 전달)
 		 허용 안되는 값이 있으면 return false -> submit 중단(서버로 전달 차단)
 		 */
-		if ($('#realname').val() == ''){
+		if ($('#realname').val() == '') {
 			alert('이름을 확인해주세요.');
 			return false;
 		}// submit이 취소된다.
-		else if($('input:radio[name=gender]').is(":checked") == false){
+		else if ($('input[name=gender]:checked').val()==undefined) {
+		/*'input:radio[name=gender]').is(":checked") == false*/ //두가지 방법으로 쓸 수 있음
 			alert('성별을 체크해주세요');
 			return false;
-		}
-		else if($('#idname').val() == ''){
+		} else if ($('#idname').val() == '') {
 			alert('로그인아이디를 확인해주세요')
 			return false;
-		}
-		else if($('#passcode').val() ==''){
+		} else if ($('#passcode').val() == '') {
 			alert('비밀번호를 확인해주세요')
 			return false;
-		}
-		else if($('#passcode').val() != $('#passcode1').val()){
+		} else if ($('#passcode1').val() == '') {
+			alert('비밀번호확인을 확인해주세요')
+			return false;
+		} else if ($('#passcode').val() != $('#passcode1').val()) {
 			alert('비밀번호가 같지 않습니다');
 			return false;
-		}
-		else if($('input:checkbox[name=interest]').is(":checked") == false){
+		} else if ($('input[name=interest]:checked').val()==undefined) {
+			/*$('input:checkbox[name=interest]').is(":checked") == false*/ //두가지방법으로 쓸 수 있ㅇ므
 			alert('관심분야를 확인해주세요');
 			return false;
-		}
-		else {
+		} else {
 			alert('회원가입이 완료되었습니다.');
 			return true; //submit 진행된다.	맞으면 바로 login.jsp로 ㄱㄱ
 		}
 	});
-	
-	$(document)
-	.on('click','#cancel1',function(){
-		document.location='home.jsp';
-	})
 
+	$(document).on('click', '#cancel1', function() {
+		document.location = 'home.jsp';
+	})
 </script>
 </html>
 
