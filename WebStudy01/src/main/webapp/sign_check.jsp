@@ -11,4 +11,5 @@
 <%-- <jsp:param name="idname" value="<%=request.getParameter("idname") %>"/> --%>
 <%-- </jsp:forward> --%>
 
-</html>
+<!-- EL Expression Language 표현언어) -->
+<!-- JSTL(JavaServer Pages Standard Tag Library) 풍부한 표현 가능--> 

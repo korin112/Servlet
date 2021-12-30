@@ -6,17 +6,18 @@
 	String passcode=request.getParameter("passcode");
 	String  jspfile=null;	
 	
-if (userid.equals("fbtmdgurv")
-		&& passcode.equals("human123")) {
+if (userid.equals(userid)
+		&& passcode.equals(passcode)) {
 	
+
+	session.setAttribute("idname",userid);
+	session.setAttribute("passcode",passcode);
+	jspfile="home.jsp";
 // 	Cookie c=new Cookie("id",request.getParameter("idname"));
 	
 // 	c.setMaxAge(365*24*60*60);
 // 	response.addCookie(c);
 // 	response.addCookie(new Cookie("passcode",request.getParameter("passcode")));
-	session.setAttribute("idname",userid);
-	session.setAttribute("passcode",passcode);
-	jspfile="home.jsp";
 // 	RequestDispatcher rd = request.getRequestDispatcher("home.jsp"); /*이게 있어야 login.jsp에서 전달가능*/
 // 	rd.forward(request, response);
 

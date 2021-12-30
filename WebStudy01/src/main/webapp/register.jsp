@@ -5,44 +5,63 @@
 <head>
 <meta charset="UTF-8">
 <title>register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="home.css">
 </head>
 <style>
 table {
 	border-collapse: collapse;
-	border: 1px solid blue;
+	border: 5px solid gray;
+	font-size: 30px;
+}
+
+td {
+	border: 2px solid gray;
+	align: center;
+}
+
+h1 {
+	font-size: 35px;
 }
 </style>
+<h1>회원가입</h1>
+<hr>
 <body align=center>
 	<form method=POST action="sign_check.jsp">
 		<table align=center>
 			<tr>
-				<td align=right>실명</td>
+				<td align=left>실명</td>
 				<td align=left><input type=text id=realname name=realname></td>
 			</tr>
 			<tr>
-				<td align=right>성별</td>
-				<td align=left><input type=radio id=male name=gender value=male>남성
-					<input type=radio id=female name=gender value=female>여성</td>
+				<td align=left>성별</td>
+				<td align=left size=40px><input type=radio id=male name=gender
+					value=male>남성 <input type=radio id=female name=gender
+					value=female>여성</td>
 			</tr>
 
 			<tr>
-				<td align=right>로그인아이디</td>
+				<td align=left>로그인아이디</td>
 				<td align=left><input type=text id=idname name=idname></td>
 			</tr>
 			<tr>
-				<td align=right>비밀번호</td>
+				<td align=left>비밀번호</td>
 				<td align=left><input type=password id=passcode name=passcode
 					id=passcode size=20></td>
 			</tr>
 			<tr>
-				<td align=right>비밀번호 확인</td>
+				<td align=left>비밀번호 확인</td>
 				<td align=left><input type=password id=passcode1 name=passcode1
 					id=passcode1 size=20></td>
 			</tr>
 
 
 			<tr>
-				<td align=right>관심분야</td>
+				<td align=left>관심분야</td>
 				<td valign=top><input type=checkbox value=정치 id=politics
 					name=interest>정치&nbsp; <input type=checkbox value=경제
 					id=economics name=interest>경제&nbsp; <input type=checkbox
@@ -60,7 +79,8 @@ table {
 			</tr>
 		</table>
 	</form>
-	
+
+	<jsp:include page="10_footer.jsp" />
 </body>
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
@@ -74,8 +94,8 @@ table {
 			alert('이름을 확인해주세요.');
 			return false;
 		}// submit이 취소된다.
-		else if ($('input[name=gender]:checked').val()==undefined) {
-		/*'input:radio[name=gender]').is(":checked") == false*/ //두가지 방법으로 쓸 수 있음
+		else if ($('input[name=gender]:checked').val() == undefined) {
+			/*'input:radio[name=gender]').is(":checked") == false*///두가지 방법으로 쓸 수 있음
 			alert('성별을 체크해주세요');
 			return false;
 		} else if ($('#idname').val() == '') {
@@ -90,8 +110,8 @@ table {
 		} else if ($('#passcode').val() != $('#passcode1').val()) {
 			alert('비밀번호가 같지 않습니다');
 			return false;
-		} else if ($('input[name=interest]:checked').val()==undefined) {
-			/*$('input:checkbox[name=interest]').is(":checked") == false*/ //두가지방법으로 쓸 수 있ㅇ므
+		} else if ($('input[name=interest]:checked').val() == undefined) {
+			/*$('input:checkbox[name=interest]').is(":checked") == false*///두가지방법으로 쓸 수 있ㅇ므
 			alert('관심분야를 확인해주세요');
 			return false;
 		} else {
