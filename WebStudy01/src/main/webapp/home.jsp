@@ -17,7 +17,7 @@
 </head>
 <body align=center>
 
-	<jsp:include page="10_header.jsp" />
+	<jsp:include page="10_header.jsp"/>
 
 	<%
 	if (session.getAttribute("idname") == null) {
